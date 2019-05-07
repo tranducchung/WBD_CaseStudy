@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Form</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        table, td, th {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<a th:href="@{/notes}">Back to list Notes</a>
+<body>
+<h1>Note</h1>
+<form th:object="${note}">
+    <table >
+        <tr>
+            <td>Title</td>
+            <td th:text="*{title}"></td>
+        </tr>
+        <tr>
+            <td>Content</td>
+            <td th:text="*{content}" style="width: 250px"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
