@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Type</title>
+</head>
+<h1>List Type</h1>
+<a th:href="@{/create-type}">Add new Type</a>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<body>
+<form>
+    <table border="1">
+        <tr>
+            <th>Type</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <th:block th:each="t : ${types}">
+            <tr>
+                <td th:text="${t.getName()}"></td>
+                <td><a th:href="@{/edit-type/__${t.getId()}__}">Edit</a></td>
+                <td><a th:href="@{/delete-type/__${t.getId()}__}" onclick="return confirm('Are you sure?')">Delete</a></td>
+            </tr>
+        </th:block>
+    </table>
+    <a th:href="@{'/types'(page=${types.number - 1})}" th:if="${types.hasPrevious()}">Previous</a>
+    <span th:text="${types.number +1 }"></span>|<span th:text="${types.totalPages}"></span>
+    <a th:href="@{'/types'(page=${types.number + 1})}" th:if="${types.hasNext()}">Next</a>
+</form>
+</body>
+</html>

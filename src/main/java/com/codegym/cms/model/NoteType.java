@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "NoteType")
-public class noteType {
+public class NoteType {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
@@ -14,10 +14,10 @@ public class noteType {
     @OneToMany(targetEntity = Note.class)
     private List<Note> notes;
 
-    public noteType() {
+    public NoteType() {
     }
 
-    public noteType(String name) {
+    public NoteType(String name) {
         this.name = name;
     }
 
@@ -36,4 +36,13 @@ public class noteType {
     public void setName(String name) {
         this.name = name;
     }
+
+    public List<Note> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(List<Note> notes) {
+        this.notes = notes;
+    }
+
 }

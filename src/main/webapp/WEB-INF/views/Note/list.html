@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Note</title>
+</head>
+<body>
+<h1>List Note</h1>
+<a th:href="@{create-note}">Add new note</a>
+<th:block th:if="${message}">
+    <p th:text="${message}"></p>
+</th:block>
+<form id="type">
+    <label>Type : </label>
+    <select name="type" onchange="document.getElementById('type').submit()">
+        <option selected="selected" onchange="">AllNotes</option>
+        <option th:each="t : ${types}" th:value="${t.id}" th:text="${t.name}"></option>
+    </select><br>
+</form><br>
+<form>
+    <input type="text" name="title" placeholder="Title">
+    <input type="submit" value="Search">
+</form><br>
+<form>
+    <table border="1">
+        <tr>
+            <th>STT</th>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <th:block th:each="n,i : ${notes}">
+            <tr>
+                <td th:text="${i.count}"></td>
+                <td><a th:href="@{/view-note/__${n.getId()}__}" th:text="${n.getTitle()}"></a></td>
+                <td th:text="${n.getType().name}"></td>
+                <td><a th:href="@{/edit-note/__${n.getId()}__}">Edit</a></td>
+                <td><a th:href="@{/delete-note/__${n.getId()}__}" onclick="return confirm('Do you want delete ?')">Delete</a></td>
+            </tr>
+        </th:block>
+    </table>
+    <div>
+        <a th:href="@{'/notes'(page=${notes.number - 1})}" th:if="${notes.hasPrevious()}">Previous</a>
+        <span th:text="${notes.number + 1}"></span>/<span th:text="${notes.totalPages}"></span>
+        <a th:href="@{'/notes'(page=${notes.number + 1})}" th:if="${notes.hasNext()}">Next</a>
+    </div>
+</form>
+</body>
+</html>

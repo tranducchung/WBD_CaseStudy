@@ -11,8 +11,9 @@ public class Note {
     private String title;
     private String content;
 
-    @ManyToOne(targetEntity = noteType.class)
-    private noteType noteType;
+    @ManyToOne
+    @JoinColumn(name = "type_id")
+    private NoteType type;
 
     public Note() {
     }
@@ -44,5 +45,13 @@ public class Note {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public NoteType getType() {
+        return type;
+    }
+
+    public void setType(NoteType type) {
+        this.type = type;
     }
 }

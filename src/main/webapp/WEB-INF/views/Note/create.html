@@ -10,6 +10,12 @@
 <form th:object="${note}" method="post" th:action="@{/create-note}">
     <table>
         <tr>
+            <th>Type</th>
+            <td><select th:field="*{type}">
+                <option th:each="t : ${types}" th:text="${t.name}" th:value="${t.id}"></option>
+            </select></td>
+        </tr>
+        <tr>
             <th>Title</th>
             <td><input type="text" th:field="*{title}"></td>
         </tr>

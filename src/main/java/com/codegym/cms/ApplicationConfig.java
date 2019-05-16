@@ -1,7 +1,9 @@
 package com.codegym.cms;
 
 import com.codegym.cms.service.NoteService;
-import com.codegym.cms.service.impl.NoteServiceimpl;
+import com.codegym.cms.service.NoteTypeService;
+import com.codegym.cms.service.impl.NoteServiceImpl;
+import com.codegym.cms.service.impl.NoteTypeServiceImpl;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -48,7 +50,11 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
 
     @Bean
     public NoteService noteService(){
-        return new NoteServiceimpl();
+        return new NoteServiceImpl();
+    }
+    @Bean
+    public NoteTypeService noteTypeService(){
+        return new NoteTypeServiceImpl();
     }
 
 

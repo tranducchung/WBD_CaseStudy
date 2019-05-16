@@ -946,158 +946,214 @@
     <table id="241" parent="4" name="Note">
       <Engine>MyISAM</Engine>
     </table>
-    <table id="242" parent="4" name="hibernate_sequence">
+    <table id="242" parent="4" name="NoteType">
       <Engine>MyISAM</Engine>
     </table>
-    <column id="243" parent="238" name="account_number">
+    <table id="243" parent="4" name="NoteType_Note">
+      <Engine>MyISAM</Engine>
+    </table>
+    <table id="244" parent="4" name="hibernate_sequence">
+      <Engine>MyISAM</Engine>
+    </table>
+    <column id="245" parent="238" name="account_number">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="244" parent="238" name="account_type">
+    <column id="246" parent="238" name="account_type">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="245" parent="238" name="date">
+    <column id="247" parent="238" name="date">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="238" name="balance">
+    <column id="248" parent="238" name="balance">
       <Position>4</Position>
       <DataType>double|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="238" name="customer_number">
+    <column id="249" parent="238" name="customer_number">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="248" parent="238" name="customer_number">
+    <index id="250" parent="238" name="customer_number">
       <ColNames>customer_number</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="249" parent="238" name="PRIMARY">
+    <key id="251" parent="238" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>account_number</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="250" parent="238" name="Accounts_ibfk_1">
+    <foreign-key id="252" parent="238" name="Accounts_ibfk_1">
       <ColNames>customer_number</ColNames>
       <RefSchemaName>Banking</RefSchemaName>
       <RefTableName>Customers</RefTableName>
       <RefColNames>customer_number</RefColNames>
     </foreign-key>
-    <column id="251" parent="239" name="customer_number">
+    <column id="253" parent="239" name="customer_number">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="252" parent="239" name="fullname">
+    <column id="254" parent="239" name="fullname">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="253" parent="239" name="address">
+    <column id="255" parent="239" name="address">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="254" parent="239" name="email">
+    <column id="256" parent="239" name="email">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="255" parent="239" name="phone">
+    <column id="257" parent="239" name="phone">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="256" parent="239" name="PRIMARY">
+    <key id="258" parent="239" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>customer_number</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="257" parent="240" name="tran_number">
+    <column id="259" parent="240" name="tran_number">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="240" name="account_number">
+    <column id="260" parent="240" name="account_number">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="240" name="customer_number">
+    <column id="261" parent="240" name="customer_number">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="240" name="date">
+    <column id="262" parent="240" name="date">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="240" name="amounts">
+    <column id="263" parent="240" name="amounts">
       <Position>5</Position>
       <DataType>double|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="240" name="descriptionts">
+    <column id="264" parent="240" name="descriptionts">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="263" parent="240" name="account_number">
+    <index id="265" parent="240" name="account_number">
       <ColNames>account_number</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="264" parent="240" name="PRIMARY">
+    <key id="266" parent="240" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>tran_number</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="265" parent="240" name="Transactions_ibfk_1">
+    <foreign-key id="267" parent="240" name="Transactions_ibfk_1">
       <ColNames>account_number</ColNames>
       <RefSchemaName>Banking</RefSchemaName>
       <RefTableName>Accounts</RefTableName>
       <RefColNames>account_number</RefColNames>
     </foreign-key>
-    <column id="266" parent="241" name="id">
+    <column id="268" parent="241" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="267" parent="241" name="content">
+    <column id="269" parent="241" name="content">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="268" parent="241" name="title">
+    <column id="270" parent="241" name="title">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="269" parent="241" name="PRIMARY">
+    <column id="271" parent="241" name="type_id">
+      <Position>4</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="272" parent="241" name="FKqjme6us3eb9tkaejbgwerud35">
+      <ColNames>type_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="273" parent="241" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="270" parent="242" name="next_val">
+    <column id="274" parent="242" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="275" parent="242" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="276" parent="242" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="277" parent="243" name="NoteType_id">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="278" parent="243" name="notes_id">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="279" parent="243" name="UK_2u15j5yk9huvcd63edw2osus8">
+      <ColNames>notes_id</ColNames>
+      <Unique>1</Unique>
+      <Type>btree</Type>
+    </index>
+    <index id="280" parent="243" name="FK673s4nys60fh3cydvngo3cv24">
+      <ColNames>NoteType_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="281" parent="243" name="UK_2u15j5yk9huvcd63edw2osus8">
+      <ColNames>notes_id</ColNames>
+      <UnderlyingIndexName>UK_2u15j5yk9huvcd63edw2osus8</UnderlyingIndexName>
+    </key>
+    <column id="282" parent="244" name="next_val">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
